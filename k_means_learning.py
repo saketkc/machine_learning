@@ -27,7 +27,7 @@ arff_file.close()
 #print data_array
 #print target_array
 #print "STARTING CLUSTERING1"
-l = len( k_means.labels_)-1
+l = len(target_list)-1
 k_means = cluster.KMeans(k=l/10)
 #print "STARTING CLUSTERING2"
 k_means.fit(data_array)
