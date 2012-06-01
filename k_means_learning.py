@@ -23,10 +23,11 @@ for row in arff_file:
 arff_file.close()
 l = len(target_list)-1
 silhoutte_dict = {}
+inertia_dict = {}
 #cluster_values = []
 #silhoutte_values = []
 
-for kc in range(3,70):
+for kc in range(3,2000):
 	k_means = cluster.KMeans(k=kc)
 	k_means.fit(data_array)
 	k_means_labels = k_means.labels_
@@ -35,6 +36,7 @@ for kc in range(3,70):
 		sl  = metrics.silhouette_score(data_array, k_means_labels, metric='euclidean')
                 if not math.isnan(float(sl)):
        	        	silhoutte_dict[kc] = sl
+                        inertia_dict[kc] = sl
         	#cluster_values.append(kc)
                 #silhoutte_values.append(sl)
 #print "Cluster values "
@@ -47,7 +49,12 @@ print silhoutte_dict
 key,value = max(silhoutte_dict.iteritems(), key=lambda x:x[1])
 print "Max SL => ", value
 print  "Corresponding CL => ", key
- 
+print "Inertia Diuct "
+print inertia_dict
+key,value = max(inertia_dict.iteritems(), key=lambda x:x[1])
+print "Max Inertia => ", value
+print  "Corresponding Inertia CL => ", key
+
 #fig = pl.figure(figsize=(8, 3))        
 #ax = fig.add_subplot(1, 3, 1)
 #plt.plot(cluster_values,silhoutte_values)
