@@ -27,7 +27,7 @@ inertia_dict = {}
 #cluster_values = []
 #silhoutte_values = []
 
-for kc in range(3,2000):
+for kc in range(3,3000):
 	k_means = cluster.KMeans(k=kc)
 	k_means.fit(data_array)
 	k_means_labels = k_means.labels_
