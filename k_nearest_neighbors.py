@@ -3,6 +3,7 @@ import arff
 from sklearn import cluster
 from sklearn import svm
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import KNeighborsRegressor
 def arff_read_to_array(filepath):
 	
 	arff_file = arff.load(filepath) #Load File
@@ -27,11 +28,17 @@ def k_nearest_neighbours():
 	Y_data = all_data["target"]
 	Y_data_map = {}
         new_Y_data = np.array([])
+        i = 01
 	for index,data in enumerate(Y_data):
-		Y_data_map[index] = data
-                new_Y_data = np.append(new_Y_data,[index],0) #Create
-	X_training = X_data[:0.1*len(X_data)]
-	Y_training = new_Y_data[:0.1*len(Y_data)]
+		data1 = data.split('_')[0]
+		split_data = (".").join(data1.split('.')[:1])
+		if not split_data in  Y_data_map:
+			Y_data_map[split_data] = i
+                        i+=1
+ 		print split_data
+                new_Y_data = np.append(new_Y_data,[Y_data_map[split_data]],0) #Create
+	X_training = X_data[:0.9*len(X_data)]
+	Y_training = new_Y_data[:0.9*len(Y_data)]
 	print X_training
 	print 
         print Y_training
@@ -39,7 +46,8 @@ def k_nearest_neighbours():
 	Y_test = new_Y_data[0.9*len(Y_data):]
 	#svc = svm.SVC(C=1, kernel='')
 	knn = KNeighborsClassifier() 
-	print knn.fit(X_training, Y_training).score(X_test,Y_test)
+	knnr= KNeighborsRegressor(n_neighbors=20000)
+	print knnr.fit(X_training, Y_training).score(X_test,Y_test)
 
 filepath = "bondchanges.arff"
 #print arff_read_to_array(filepath)
