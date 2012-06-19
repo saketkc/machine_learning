@@ -1,8 +1,9 @@
 import Orange
 
-iris = Orange.data.Table("bond.new.arff")
+iris = orange.ExmapleTable("bond.new.arff")
+import orngMDS
 
-matrix = Orange.misc.SymMatrix(len(iris))
+matrix = orange.SymMatrix(len(iris))
 matrix = Orange.distance.distance_matrix(iris, Orange.distance.Euclidean)
 
 clustering = Orange.clustering.hierarchical.HierarchicalClustering()
