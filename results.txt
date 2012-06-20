@@ -1,0 +1,2 @@
+-i bond.new.arff
+-c 7

@@ -1,25 +1,81 @@
 import orange
+import Orange
 import orngIO
 import orngClustering
-data = orngIO.loadARFF('bond.new.arff')
-def callback(km):
-    print "Iteration: %d, changes: %d, score: %.4f" % (km.iteration,km.nchanges, km.score)
-#km_random = orngClustering.KMeans(data, centroids = 7,minscorechange=0, inner_callback=callback)
-print "DIVERSITY"
-km_diversity = orngClustering.KMeans(data, centroids = 7,minscorechange=0, initialization=orngClustering.kmeans_init_diversity, inner_callback=callback)
-print "HC"
-#km_hc = orngClustering.KMeans(data, centroids = 7,minscorechange=0, initialization=orngClustering.KMeans_init_hierarchicalClustering(n=100), inner_callback=callback)
-plot = orngClustering.plot_silhouette(km_hc, "kmeans-hc.png")
-#plot1 = orngClustering.plot_silhouette(km_diversity, "kmeans-diversity.png")
+import sys
+import getopt
+def load_data(filepath):
+    data = orngIO.loadARFF(filepath)
+    return data
+    
 
-for index,row in enumerate(km_diversity.data):
-    ec_number_rxnid = row[-1]
-    ec_number = (".").join(ec_number_rxnid.split('_')[0].split('.')[:3])
-#print km_random.clusters[-10:]
+def perform_clustering(data,initialization=orngClustering.kmeans_init_diversity,cluster_size=6,minscorechange=0,):
+    km = orngClustering.KMeans(data, centroids = cluster_size,minscorechange=0, initialization=initialization)
+    #orngClustering.KMeans_init_hierarchicalClustering(n=100))
+    callback(km,cluster_size)
+    #km_random = orngClustering.KMeans(data, centroids = 7,minscorechange=0, inner_callback=callback)
+    #km_diversity = orngClustering.KMeans(data, centroids = 7,minscorechange=0, initialization=orngClustering.kmeans_init_diversity, inner_callback=callback)
 
-#print km_diversity.clusters[-10:]
-print km_hc.clusters[-10:]
 
+    
+
+def callback(km,cluster_size):
+    clusters = km.clusters
+    height = cluster_size
+    width = 6 ## EC CLASSES !
+    count_matrix =  [[0]*width for x in xrange(0,height)]
+
+    for i in range(0,len(clusters)):
+        ec_with_rmrid = str(km.data[i][-1])
+        ec_1 = ec_with_rmrid[0]
+        cluster = clusters[i] 
+        count_matrix[cluster][int(ec_1)-1] +=1
+        #for j in clusters
+        #print clusters[i], " => ", km.data[i][-1]
+    #print count_matrix
+    col_totals = [ sum(x) for x in zip(*count_matrix) ]
+    
+    for index,x in enumerate(count_matrix):
+        row_sum = sum(x)
+        count_matrix[index] = ["{0:.2f}".format(float(a)/b) for a,b in zip(x,col_totals)]
+        print count_matrix[index] , " => ", row_sum
+
+
+   
+   
+
+
+def main(argv):
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "hi:c:", ["help","c"])        
+    except getopt.GetoptError, err:
+        print str(err)        
+        print """python orange-final.py -i <input file path> -c <number of clusters> """
+        sys.exit(2)
+    for o, a in opts:
+        print o,a
+        if o in ("-h","--help"):
+            print """python orange-final.py -i <input file path> -c <number of clusters> """
+        elif o in ("-i","--input"):            
+            filepath = a
+        elif o in("-c","--clusters"):
+            clusters = a
+        else :
+            assert False,"unhandle option"
+    if clusters!='' and filepath!='':
+        data = load_data(filepath)
+        for i in range(6,400):
+            perform_clustering(data,cluster_size=int(i))        
+
+        
+         
+        
+
+
+if __name__=="__main__":
+    main(sys.argv)
+        
+        
 
 
 
