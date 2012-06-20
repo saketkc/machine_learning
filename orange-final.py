@@ -40,7 +40,9 @@ def callback(km,cluster_size):
         count_matrix[index] = ["{0:.2f}".format(float(a)/b) for a,b in zip(x,col_totals)]
         print count_matrix[index] , " => ", row_sum
 
-
+    max_counts = [max(a,b) for a,b in zip(*count_matrix)]
+    print max_counts
+    print "**********************"
    
    
 
@@ -53,7 +55,7 @@ def main(argv):
         print """python orange-final.py -i <input file path> -c <number of clusters> """
         sys.exit(2)
     for o, a in opts:
-        print o,a
+        
         if o in ("-h","--help"):
             print """python orange-final.py -i <input file path> -c <number of clusters> """
         elif o in ("-i","--input"):            
