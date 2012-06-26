@@ -40,8 +40,8 @@ def callback(km,cluster_size):
         count_matrix[index] = ["{0:.2f}".format(float(a)/b) for a,b in zip(x,col_totals)]
         print count_matrix[index] , " => ", row_sum
 
-    max_counts = [max(a,b) for a,b in zip(*count_matrix)]
-    print max_counts
+    #max_counts = [max(a,b) for a,b in zip(*count_matrix)]
+    #print max_counts
     print "**********************"
    
    
