@@ -27,11 +27,11 @@ for index,key in enumerate(maps):
 		matrix[index][int(cvkey)-1]=maps[key][cvkey]
 
 
-print "Cluster\t","EC1\t" ,"EC2\t","EC3\t","EC4\t","EC5\t","EC6\t"
+print "Cluster\t","EC1\t" ,"EC2\t","EC3\t","EC4\t","EC5\t","EC6"
 for index,j in enumerate(matrix):
-	string = str(index+1)+"\t"
+	string = str(index+1)
 	for value in j:
-		string+=str(value)+"\t"
+		string+="\t"+str(value)
 	print string
 	
     	
