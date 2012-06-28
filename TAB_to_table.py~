@@ -10,7 +10,7 @@ for line in open(sys.argv[1],'r'):
         for element in split_line[0:-1]:
             string_to_write += "\t" + "\""+element+"\""
         string_to_write+="\n"
-    elif i>=3 :
+    elif i>=2 :
         p,q = 0,-1
         split_line[q],split_line[p] = split_line[p],split_line[q]
         string_to_write = ("\t").join(map(str,split_line))+"\n"
