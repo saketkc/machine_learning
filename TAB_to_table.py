@@ -8,7 +8,7 @@ for line in open(sys.argv[1],'r'):
     if i==0:
         string_to_write = "\"ecs\""
         for element in split_line[0:-1]:
-            string_to_write += "\t" + "\""+element+"\""
+            string_to_write += "\t" + element
         string_to_write+="\n"
     elif i>=3 :
         p,q = 0,-1

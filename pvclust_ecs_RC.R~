@@ -15,7 +15,7 @@ cluster_length <- length(i)
 for (j in 1:cluster_length){
 ec <- i[j]
 ec_subclass <-as.integer(unlist(strsplit(ec, ".", fixed = TRUE))[2])
-confusion_matrix[row,ec_subclass] <- confusion_matrix[row,ec_subclass]+1
+confusion_matrix[row][ec_subclass] <- confusion_matrix[row][ec_subclass]+1
 
 }
 row <- row+1
