@@ -1,0 +1,126 @@
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= average distance Method = euclidean"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    3    0    0    0    0
+[2,]    0    0    0    0    2    0
+[3,]    0   27    0    0    0    0
+[4,]    0    0    3    0    0    0
+[5,]    0    0    2    0    0    0
+[6,]    0    0    5    0    0    0
+[7,]    0    0   52    0    0    0
+[8,]   24    0    1    6    0    0
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= average distance Method = maximum"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    0    4    0    0    0
+[2,]    0    0    2    0    0    0
+[3,]   24   31   62    9    2    1
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= average distance Method = manhattan"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]   24   31   67    8    2    1
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= average distance Method = canberra"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    0    2    1    0    0
+[2,]   24   31   65    5    2    1
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= average distance Method = binary"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]   24   31   68    9    2    0
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= average distance Method = minkowski"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    3    0    0    0    0
+[2,]    0    0    0    0    2    0
+[3,]    0   27    0    0    0    0
+[4,]    0    0    3    0    0    0
+[5,]    0    0    2    0    0    0
+[6,]    0    0    5    0    0    0
+[7,]    0    0   52    0    0    0
+[8,]   24    0    1    6    0    0
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= ward distance Method = euclidean"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    3    0    0    0    0
+[2,]    0   27    0    0    0    0
+[3,]   24    0    1    0    0    0
+[4,]    0    0   67    9    2    1
+Bootstrap (r = 0.48)... Done.
+Bootstrap (r = 0.6)... Done.
+Bootstrap (r = 0.68)... Done.
+Bootstrap (r = 0.8)... Done.
+Bootstrap (r = 0.88)... Done.
+Bootstrap (r = 1.0)... Done.
+Bootstrap (r = 1.08)... Done.
+Bootstrap (r = 1.2)... Done.
+Bootstrap (r = 1.28)... Done.
+Bootstrap (r = 1.4)... Done.
+[1] "hCluster Method= ward distance Method = maximum"
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    1    4   68    9    2    1
+[2,]   23   27    0    0    0    0
+Bootstrap (r = 0.48)... 

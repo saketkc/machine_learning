@@ -25,7 +25,7 @@ for (hm in hclust_methods){
 		}
 		row <- row+1
 		}
-		print(paste("hCluster Method=",hm,"distance Method =",dm) 
+		print(paste("hCluster Method=",hm,"distance Method =",dm)) 
 		print (confusion_matrix)
 		pdf(paste('results/ec6_all_changes_',hm,'_',dm,'_','.pdf',sep=""),height=6,width=50)
 		plot(pv, hang=-1,cex=0.56,cex.pv=0.4); pvrect(pv, alpha=0.95) # Plots result as a dendrogram where the significant clusters are highlighted with red rectangles.
