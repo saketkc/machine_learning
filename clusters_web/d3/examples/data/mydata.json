@@ -1,0 +1,4 @@
+[
+{"name":"flare.analytics.row.r1","size":12,"imports":["flare.analytics.row.ec2","flare.analytics.row.ec5","flare.analytics.row.ec6"]},
+{"name":"flare.analytics.row.r2","size":10432,"imports":["flare.analytics.row1.ec2","flare.analytics.r12.ec5","flare.analytics.row.ec6"]}
+]
