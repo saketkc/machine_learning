@@ -6,7 +6,7 @@ dist_methods = c("euclidean","maximum","manhattan","canberra","binary","minkowsk
 for (hm in hclust_methods){
 
 	for (dm in dist_methods){	
-		mydata <- read.table("/homes/saketc/research2/saket/BLAST/machine_learning/all_changes_ec6_for_orange-mod.tab",sep='\t',header=T)
+		mydata <- read.table("/homes/saketc/research2/saket/BLAST/machine_learning/allchanges/all_domain_changes_for_orange-mod.tab",sep='\t',header=T)
 		rownames(mydata) <- mydata[,1]; mydata <- as.matrix(mydata[,-1]) 
 		pv <- pvclust(scale(t(mydata)), method.dist=dm, method.hclust=hm, nboot=1000) # Perform the hierarchical cluster analysis
 		clsig <- pvpick(pv, alpha=0.95, pv="au", type="geq", max.only=TRUE) # Retrieve members of significant clusters.
@@ -27,7 +27,7 @@ for (hm in hclust_methods){
 		}
 		print(paste("hCluster Method=",hm,"distance Method =",dm)) 
 		print (confusion_matrix)
-		pdf(paste('results/ec6_all_changes_',hm,'_',dm,'_','.pdf',sep=""),height=6,width=50)
+		pdf(paste('allchanges/all_domain_changes_',hm,'_',dm,'_','.pdf',sep=""),height=6,width=50)
 		plot(pv, hang=-1,cex=0.56,cex.pv=0.4); pvrect(pv, alpha=0.95) # Plots result as a dendrogram where the significant clusters are highlighted with red rectangles.
 		dev.off()
 	}
