@@ -61,8 +61,8 @@ var svg = d3.select("body").append("svg")
 svg.append("circle")
     .attr("r", outerRadius);
 
-d3.csv("mymatrix.csv", function(cities) {
-  d3.json("mymatrix.json", function(matrix) {
+d3.csv("csvs/median_manhattan.csv", function(cities) {
+  d3.json("csvs/median_manhattan.json", function(matrix) {
 
     // Compute the chord layout.
     layout.matrix(matrix);

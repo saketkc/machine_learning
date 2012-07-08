@@ -39,7 +39,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-d3.json("../data/mydata.json", function(imports) {
+d3.json("../data/complete_euclidean.json", function(imports) {
   var indexByName = {},
       nameByIndex = {},
       matrix = [],
